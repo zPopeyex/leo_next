@@ -1,4 +1,4 @@
-export default function Posts() {
+export default function posts() {
   return (
     <div>
       <h1>Post Page</h1>
