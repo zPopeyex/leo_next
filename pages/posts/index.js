@@ -1,11 +1,12 @@
 import Navbar from "../../components/navbar";
+import Title from "../../components/title";
+import Layout from "../../components/layout";
 
 export default function posts() {
   return (
-    <div>
-      <Navbar />
-      <h1>Post Page</h1>
+    <Layout>
+      <Title>Post Page</Title>
       <p>Thi is the post page</p>
-    </div>
+    </Layout>
   );
 }
