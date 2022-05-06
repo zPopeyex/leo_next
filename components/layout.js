@@ -6,6 +6,7 @@ export default function Layout({ children }) {
       <Navbar />
       <p>Texto desde Layout</p>
       <main>{children}</main>
+      <style></style>
     </div>
   );
 }
