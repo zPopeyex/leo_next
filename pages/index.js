@@ -6,6 +6,17 @@ export default function Home() {
     <Layout>
       <Title>Home Page</Title>
       <p>This is the home Page</p>
+      <style>
+        {`
+          p {
+          color: darkgray;
+          }
+          p:hover{
+          color: darkred;
+          }
+
+        `}
+      </style>
     </Layout>
   );
 }

@@ -7,7 +7,9 @@ export default function post_d() {
 
   return (
     <div>
+      <p>╔═══════ ≪ •❈• ≫ ═══════╗</p>
       <Navbar />
+      <p>╚═══════ ≪ •❈• ≫ ═══════╝</p>
       <Title>Post Details</Title>
       <p>Post ID: {router.query.id}</p>
     </div>

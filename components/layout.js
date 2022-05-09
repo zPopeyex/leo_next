@@ -3,10 +3,41 @@ import Navbar from "./navbar";
 export default function Layout({ children }) {
   return (
     <div>
+      <p>╔═══════ ≪ •❈• ≫ ═══════╗</p>
       <Navbar />
-      <p>Texto desde Layout</p>
+      <p>╚═══════ ≪ •❈• ≫ ═══════╝</p>
       <main>{children}</main>
-      <style></style>
+      <style jsx>
+        {`
+          div {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+
+          main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        `}
+      </style>
+
+      <style jsx global>
+        {`
+          html,
+          body{
+            padding: 0;
+            margin 0;
+          }
+          *{
+            box-sizing: border-box;
+          }
+        `}
+      </style>
     </div>
   );
 }
