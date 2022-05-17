@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 export default function Layout({ children }) {
   return (
     <div>
-      <p>╔═══════ ≪ •❈• ≫ ═══════╗</p>
+      <p>╔═══════ ≪ •❈• ≫ ═══════╗ ..test</p>
       <Navbar />
       <p>╚═══════ ≪ •❈• ≫ ═══════╝</p>
       <main>{children}</main>
