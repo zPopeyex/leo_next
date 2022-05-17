@@ -7,6 +7,17 @@ export default function users() {
     <Layout>
       <Title>Users Page</Title>
       <p>This is the users page</p>
+      <style>
+        {`
+          p {
+          color: darkgray;
+          }
+          p:hover{
+          color: darkred;
+          }
+
+        `}
+      </style>
     </Layout>
   );
 }
