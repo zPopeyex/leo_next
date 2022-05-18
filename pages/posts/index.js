@@ -7,6 +7,17 @@ export default function posts() {
     <Layout>
       <Title>Post Page</Title>
       <p>Thi is the post page</p>
+      <style>
+        {`
+          p {
+          color: darkgray;
+          }
+          p:hover{
+          color: darkred;
+          }
+
+        `}
+      </style>
     </Layout>
   );
 }
