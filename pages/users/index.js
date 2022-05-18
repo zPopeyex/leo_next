@@ -7,13 +7,24 @@ export default function users() {
     <Layout>
       <Title>Users Page</Title>
       <p>This is the users page</p>
+      <style jsx>
+        {`
+          nav {
+            padding-top: 10px;
+          }
+          a {
+            padding: 0 14px;
+          }
+        `}
+      </style>
+
       <style>
         {`
           p {
           color: darkgray;
           }
           p:hover{
-          color: darkred;
+          color: pink;
           }
 
         `}

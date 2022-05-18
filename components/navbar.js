@@ -18,7 +18,7 @@ export default function Navbar() {
             padding-top: 10px;
           }
           a {
-            padding: 0 10px;
+            padding: 0 14px;
           }
         `}
       </style>

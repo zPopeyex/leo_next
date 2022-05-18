@@ -6,15 +6,14 @@ export default function Home() {
     <Layout>
       <Title>Home Page</Title>
       <p>This is the home Page</p>
-      <style>
+      <style jsx global>
         {`
           p {
-          color: darkgray;
+            color: darkgray;
           }
-          p:hover{
-          color: darkred;
+          p:hover {
+            color: pink;
           }
-
         `}
       </style>
     </Layout>
