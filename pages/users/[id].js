@@ -28,6 +28,7 @@ export default function User({ user }) {
           a {
             padding: 0 14px;
           }
+          
         `}
       </style>
       <style jsx>
