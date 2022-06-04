@@ -3,14 +3,22 @@ import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
 import Title from "../../components/title";
 
-export default function user() {
+export default function User({ user }) {
   const router = useRouter();
+
+  if (router.isFallback){
+    return <div> CARGANDO ...</div>
+  }
 
   return (
     <div>
       <Layout>
-        <Title>User Details</Title>
-        <p>User ID: {router.query.id}</p>
+        <Title>User ID {user.id}</Title>
+       
+        <p>Name: {user.name}</p>
+        <p>Email: {user.email}</p>
+        <p>Phone: {user.phone}</p>
+        <p>Website: {user.website}</p>
       </Layout>
       <style jsx>
         {`
@@ -57,9 +65,21 @@ export default function user() {
   );
 }
 
+export async function getStaticPaths(){
+  const paths =  [
+    { params: { id: '1'} },
+    { params: { id: '2'} },
+  ];
+  return {
+    paths,
+    fallback: true
+  }
+
+}
+
 export async function getStaticProps({params}){
       const res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
-      const user = res.json();
+      const user =  await res.json();
 
       return{
         props:{

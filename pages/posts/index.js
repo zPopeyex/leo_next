@@ -20,6 +20,7 @@ export default function posts({posts}) {
   return (
     <Layout>
       <Title>Post Page</Title>
+      <p>Thi is the post page</p>
       <div className='grid'>
         {posts.map((post) => {
           return (
@@ -36,7 +37,6 @@ export default function posts({posts}) {
           );
         })}
       </div>
-      <p>Thi is the post page</p>
       <style>
         {`
           p {

@@ -8,25 +8,23 @@ export default function users({users}) {
   return (
     <Layout>
       <Title>Users Page</Title>
+      <p>This is the users page</p>
       <div className='grid'>
         {users.map(user => {
           return(
             <Link href={'/users/[id]'} as={`/users/${user.id}`}>
-
               <a className='card'>
                 <h3>User</h3>
                 <p>Name: {user.name}</p>
                 <p>Email: {user.email}</p>
-                
-
+                <p>Phone: {user.phone}</p>
+                <p>Website: {user.website}</p>
               </a>
-
             </Link>
           )
         })}   
 
       </div>
-      <p>This is the users page</p>
       <style jsx>
         {`
           nav {
