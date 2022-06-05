@@ -6,20 +6,32 @@ import Title from "../../components/title";
 export default function User({ user }) {
   const router = useRouter();
 
-  if (router.isFallback){
-    return <div> CARGANDO ...</div>
+  if (router.isFallback) {
+    return <div> CARGANDO ...</div>;
   }
 
   return (
     <div>
       <Layout>
         <Title>User ID {user.id}</Title>
-       
+        <h2>┏━━━━━━━━━━━━━━━┓</h2>
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>
         <p>Website: {user.website}</p>
+        <h2>┗━━━━━━━━━━━━━━━┛</h2>
       </Layout>
+      <style>
+        {`
+          p {
+          color: darkgray;
+          }
+          p:hover{
+          color: pink;
+          }
+
+        `}
+      </style>
       <style jsx>
         {`
           nav {
@@ -28,11 +40,11 @@ export default function User({ user }) {
           a {
             padding: 0 14px;
           }
-          
         `}
       </style>
+
       <style jsx>
-          {`
+        {`
             .grid {
               display: flex;
               flex-wrap: wrap;
@@ -60,31 +72,37 @@ export default function User({ user }) {
             }
             
             `}
-
       </style>
     </div>
   );
 }
 
-export async function getStaticPaths(){
-  const paths =  [
-    { params: { id: '1'} },
-    { params: { id: '2'} },
-  ];
+export async function getStaticPaths() {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+  const users = await res.json();
+  // const paths = [{ params: { id: "1" } }, { params: { id: "2" } }];
+
+  const paths = users.map((user) => {
+    return {
+      params: { id: `user.id` },
+    };
+  });
+
   return {
     paths,
-    fallback: true
-  }
-
+    fallback: true,
+  };
 }
 
-export async function getStaticProps({params}){
-      const res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
-      const user =  await res.json();
+export async function getStaticProps({ params }) {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${params.id}`
+  );
+  const user = await res.json();
 
-      return{
-        props:{
-          user
-        }
-      }
-}   
+  return {
+    props: {
+      user,
+    },
+  };
+}
