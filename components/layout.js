@@ -15,7 +15,7 @@ export default function Layout({ children }) {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: grey;
+            
           }
 
           main {
