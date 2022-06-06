@@ -14,7 +14,7 @@ export default function User({ user }) {
     <div>
       <Layout>
         <Title>User ID {user.id}</Title>
-        <h2>┏━━━━━━━━━━━━━━━┓</h2>
+        
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>
