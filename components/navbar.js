@@ -12,13 +12,16 @@ export default function Navbar() {
       <Link href="/posts">
         <a>Posts</a>
       </Link>
+      <Link href="/characters">
+        <a>Characters</a>      
+      </Link>
       <style jsx>
         {`
           nav {
-            padding-top: 10px;
+            padding-top: 12px;
           }
           a {
-            padding: 0 14px;
+            padding: 0 8px;
           }
         `}
       </style>
