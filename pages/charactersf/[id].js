@@ -3,34 +3,25 @@ import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
 import Title from "../../components/title";
 
-export default function User({ user }) {
-  const router = useRouter();
+export default function Char({char}) {
+    const router = useRouter();
 
-  if (router.isFallback){
-    return <div> CARGANDO ...</div>
-  }
+    if (router.isFallback){
+        return <div> CARGANDO ...</div>
+    }
 
-  return (
-    <div>
-      <Layout>
-        <Title>User ID {user.id}</Title>
-       
-        <p>Name: {user.name}</p>
-        <p>Email: {user.email}</p>
-        <p>Phone: {user.phone}</p>
-        <p>Website: {user.website}</p>
-      </Layout>
-      <style jsx>
-        {`
-          nav {
-            padding-top: 10px;
-          }
-          a {
-            padding: 0 14px;
-          }
-          
-        `}
-      </style>
+    return (
+        <div>
+            <Layout>
+                <Title>Character ID: {char.id}</Title>
+                <p>Name: {char.name}</p>
+                <p>Specie: {char.species}</p>
+                <p>Gender: {char.gender}</p>
+                <p>Origin: {char.location.name}</p>
+                <img src={char.image}></img>
+                
+            </Layout>
+           
       <style jsx>
           {`
             .grid {
@@ -61,8 +52,8 @@ export default function User({ user }) {
             
             `}
 
-      </style>
-      <style jsx global>
+             </style>
+             <style jsx global>
         {`
           p {
             color: darkgray;
@@ -71,30 +62,31 @@ export default function User({ user }) {
             color: pink;
           }
         `}
-      </style>
-    </div>
-  );
+      </style>          
+        </div>
+
+    );
 }
 
 export async function getStaticPaths(){
-  const paths =  [
-    { params: { id: '1'} },
-    { params: { id: '2'} },
-  ];
-  return {
-    paths,
-    fallback: true
+    const paths =  [
+      { params: { id: '1'} },
+      { params: { id: '2'} },
+    ];
+    return {
+      paths,
+      fallback: true
+    }
+  
   }
-
-}
-
-export async function getStaticProps({params}){
-      const res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
-      const user =  await res.json();
-
-      return{
-        props:{
-          user
+  
+  export async function getStaticProps({params}){
+        const res = await fetch(`https://rickandmortyapi.com/api/character/${params.id}`);
+        const char =  await res.json();
+  
+        return{
+          props:{
+            char
+          }
         }
-      }
-}   
+  }   

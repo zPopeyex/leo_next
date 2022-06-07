@@ -14,7 +14,7 @@ export default function users({users}) {
           return(
             <Link href={'/users/[id]'} as={`/users/${user.id}`}>
               <a className='card'>
-                <h3>User</h3>
+                <h3>User: {user.id}</h3>
                 <p>Name: {user.name}</p>
                 <p>Email: {user.email}</p>
                 <p>Phone: {user.phone}</p>

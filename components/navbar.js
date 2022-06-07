@@ -12,8 +12,8 @@ export default function Navbar() {
       <Link href="/posts">
         <a>Posts</a>
       </Link>
-      <Link href="/characters">
-        <a>Characters</a>      
+      <Link href="/charactersf">
+        <a>Character</a>      
       </Link>
       <style jsx>
         {`
