@@ -3,9 +3,8 @@ import Title from "../../components/title";
 import Layout from "../../components/layout";
 import React from "react";
 import Link from "next/link";
-export default function posts({posts}) {
- // Render side client
-
+export default function posts({ posts }) {
+  // Render side client
 
   // React.useEffect(() => {
   //   const fetchPosts = async () => {
@@ -21,7 +20,7 @@ export default function posts({posts}) {
     <Layout>
       <Title>Post Page</Title>
       <p>Thi is the post page</p>
-      <div className='grid'>
+      <div className="grid">
         {posts.map((post) => {
           return (
             <Link
@@ -29,7 +28,7 @@ export default function posts({posts}) {
               as={`/posts/${post.id}`}
               key={post.title}
             >
-              <a className='card'>
+              <a className="card">
                 <h3>{post.title}</h3>
                 <p>{post.body}</p>
               </a>
@@ -49,7 +48,7 @@ export default function posts({posts}) {
         `}
       </style>
       <style jsx>
-          {`
+        {`
             .grid {
               display: flex;
               flex-wrap: wrap;
@@ -77,22 +76,19 @@ export default function posts({posts}) {
             }
             
             `}
-
       </style>
     </Layout>
   );
 }
 
 //Corre del lado del servidor
-export async function getServerSideProps(){
-
-  const res = await fetch ('https://jsonplaceholder.typicode.com/posts');
+export async function getServerSideProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await res.json();
 
   return {
     props: {
-      posts
-    }
-  }
-
+      posts,
+    },
+  };
 }

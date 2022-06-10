@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import "bootstrap/dist/css/bootstrap.min.css"
 export default function Navbar() {
   return (
     <nav>
@@ -18,10 +18,10 @@ export default function Navbar() {
       <style jsx>
         {`
           nav {
-            padding-top: 12px;
+            padding-top: 1px;
           }
           a {
-            padding: 0 8px;
+            margin: 4px;
           }
         `}
       </style>

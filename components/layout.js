@@ -1,43 +1,20 @@
 import Navbar from "./navbar";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export default function Layout({ children }) {
-  return (
+  return ( <>
     <div>
-      <p>╔═══════ ≪ •❈• ≫ ═══════╗ </p>
-      <Navbar />
-      <p>╚═══════ ≪ •❈• ≫ ═══════╝</p>
-      <main>{children}</main>
-      <style jsx>
-        {`
-          div {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-
-          main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-        `}
-      </style>
-
-      <style jsx global>
-        {`
-          html,
-          body{
-            padding: 0;
-            margin 0;
-          }
-          *{
-            box-sizing: border-box;
-          }
-        `}
-      </style>
+      <div className="mt-3 mb-3 d-flex justify-content-center">
+        <img height="250"  src="https://wallpaperaccess.com/full/1396544.jpg" ></img>
+      </div>
     </div>
+    
+    <div className="d-flex flex-column align-items-center">
+      <div>╔═══════ ≪ •❈• ≫ ═══════╗ </div>
+      <Navbar />
+      <div>╚═══════ ≪ •❈• ≫ ═══════╝</div>
+      <main>{children}</main>
+    </div>
+    </>
   );
 }

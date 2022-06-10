@@ -3,17 +3,15 @@ import Title from "../../components/title";
 import Layout from "../../components/layout";
 import Link from "next/link";
 
-export default function users({users}) {
-
+export default function users({ users }) {
   return (
     <Layout>
       <Title>Users Page</Title>
-      <p>This is the users page</p>
-      <div className='grid'>
-        {users.map(user => {
-          return(
-            <Link href={'/users/[id]'} as={`/users/${user.id}`}>
-              <a className='card'>
+      <div className="grid">
+        {users.map((user) => {
+          return (
+            <Link href={"/users/[id]"} as={`/users/${user.id}`}>
+              <a className="card">
                 <h3>User: {user.id}</h3>
                 <p>Name: {user.name}</p>
                 <p>Email: {user.email}</p>
@@ -21,9 +19,8 @@ export default function users({users}) {
                 <p>Website: {user.website}</p>
               </a>
             </Link>
-          )
-        })}   
-
+          );
+        })}
       </div>
       <style jsx>
         {`
@@ -40,6 +37,7 @@ export default function users({users}) {
         {`
           p {
           color: darkgray;
+          align-self: center;
           }
           p:hover{
           color: pink;
@@ -48,7 +46,7 @@ export default function users({users}) {
         `}
       </style>
       <style jsx>
-          {`
+        {`
             .grid {
               display: flex;
               flex-wrap: wrap;
@@ -76,20 +74,18 @@ export default function users({users}) {
             }
             
             `}
-
       </style>
     </Layout>
   );
 }
 
-export async function getStaticProps(){
-  const res = await fetch ('https://jsonplaceholder.typicode.com/users');
+export async function getStaticProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const users = await res.json();
 
-  return{
-    props:{
-      users
-    }
-  }
-
+  return {
+    props: {
+      users,
+    },
+  };
 }
