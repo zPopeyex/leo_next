@@ -1,4 +1,4 @@
-import Navbar from "../../components/navbar";
+import Head from "next/head";
 import Title from "../../components/title";
 import Layout from "../../components/layout";
 import Link from "next/link";
@@ -6,6 +6,13 @@ import Link from "next/link";
 export default function users({ users }) {
   return (
     <Layout>
+      <Head>
+        <title>Next Users </title>
+        <meta
+          name="description"
+          content="Lista donde encontraremos a todos los usuarios registrados"
+        />
+      </Head>
       <Title>Users Page</Title>
       <div className="grid">
         {users.map((user) => {

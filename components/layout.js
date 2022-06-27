@@ -5,13 +5,13 @@ export default function Layout({ children }) {
   return (
     <>
       <div>
-        <div className="card d-flex flex-column align-items-center p-2">
+        <div className="d-flex flex-column align-items-center p-2 ">
           <img
             src="https://wallpaperaccess.com/full/1396544.jpg"
-            className="card-img rounded-4 mx-auto  w-50 vh- p-4 "
+            className="card-img rounded-4 w-50 vh- p-5 "
           ></img>
           <div className="card-body w-50">
-            <h5 className="card-title">Card title</h5>
+            
             <div className="d-flex justify-content-around ">
               <a href="/" className="btn btn-primary">
                 Home

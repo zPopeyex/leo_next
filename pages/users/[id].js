@@ -1,6 +1,6 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Layout from "../../components/layout";
-import Navbar from "../../components/navbar";
 import Title from "../../components/title";
 
 export default function User({ user }) {
@@ -13,6 +13,13 @@ export default function User({ user }) {
   return (
     <div>
       <Layout>
+      <Head>
+        <title>User #{user.id}</title>
+        <meta
+          name="description"
+          content="Descripcón del usuario seleccionado"
+        />
+      </Head>
         <Title>User ID {user.id}</Title>
        
         <p>Name: {user.name}</p>

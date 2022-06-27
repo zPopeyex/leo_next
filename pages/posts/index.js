@@ -1,4 +1,4 @@
-import Navbar from "../../components/navbar";
+import Head from "next/head";
 import Title from "../../components/title";
 import Layout from "../../components/layout";
 import React from "react";
@@ -18,6 +18,13 @@ export default function posts({ posts }) {
 
   return (
     <Layout>
+      <Head>
+        <title>Next Posts</title>
+        <meta
+          name="description"
+          content="Consumo de api, donde podremos ver una lista de posts realizados, y ver su detalle"
+        />
+      </Head>
       <Title>Post Page</Title>
       <p>Thi is the post page</p>
       <div className="grid">
