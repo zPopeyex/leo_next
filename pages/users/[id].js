@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import Title from "../../components/title";
@@ -21,7 +22,7 @@ export default function User({ user }) {
         />
       </Head>
         <Title>User ID {user.id}</Title>
-       
+        <Image src={`/images/${user.id}.jpg`} width={400} height={400} objectFit="cover"></Image>
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>
