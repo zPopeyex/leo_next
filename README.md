@@ -1,6 +1,8 @@
-# leo_next
+<h1>Demo del proyecto</h1>
+https://leo-next.vercel.app/
+<br><br>
 
-Install react and next
+
 npm install react react-dom next
 
 Install boostrap 
