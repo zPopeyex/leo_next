@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function chars({ chars }) {
   return (
     <Layout>
-      <Title>Characters Page</Title>
+      <Title>Character's Page</Title>
       <p> This the characters page</p>
       <div className="grid">
         {chars.map((char) => {
