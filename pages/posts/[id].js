@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useRouter } from "next/dist/client/router";
 import Layout from "../../components/layout";
 import Title from "../../components/title";
