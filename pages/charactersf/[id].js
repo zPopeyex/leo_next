@@ -6,20 +6,9 @@ import Title from "../../components/title";
 export default function Char({ char }) {
   const router = useRouter();
 
-  if (router.isFallback) {
-    return <div> CARGANDO ...</div>;
-  }
-
   return (
     <div>
       <Layout>
-        <Head>
-          <title>Character #{char.id}</title>
-          <meta
-            name="description"
-            content="Descripción personal del character seleccionado"
-          />
-        </Head>
         <Title>Character ID: {char.id}</Title>
         <p>Name: {char.name}</p>
         <p>Specie: {char.species}</p>

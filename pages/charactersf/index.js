@@ -6,13 +6,6 @@ import Link from "next/link";
 export default function chars({ chars }) {
   return (
     <Layout>
-      <Head>
-        <title>Next Characters</title>
-        <meta
-          name="description"
-          content="Listado consumido por api, donde tendremos una lista de todos los personajes de la serie Rick and Morty"
-        />
-      </Head>
       <Title>Characters Page</Title>
       <p> This the characters page</p>
       <div className="grid">

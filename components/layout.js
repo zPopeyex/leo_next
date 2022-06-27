@@ -1,7 +1,9 @@
 import Navbar from "./navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 
 export default function Layout({ children }) {
+  const [counter, setCounter] = useState(0);
   return (
     <>
       <div>
@@ -34,6 +36,7 @@ export default function Layout({ children }) {
         <div>╔═══════ ≪ •❈• ≫ ═══════╗ </div>
         <Navbar />
         <div>╚═══════ ≪ •❈• ≫ ═══════╝</div>
+        <h1 onClick={() => setCounter(counter + 1)}>Counter interno: {counter}</h1>
         <main>{children}</main>
       </div>
     </>

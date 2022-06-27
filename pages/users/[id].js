@@ -7,14 +7,16 @@ import Title from "../../components/title";
 export default function User({ user }) {
   const router = useRouter();
 
- 
-
   return (
     <div>
       <Layout>
-      
         <Title>User ID {user.id}</Title>
-        <Image src={`/images/${user.id}.jpg`} width={400} height={400} objectFit="cover"></Image>
+        <Image
+          src={`/images/${user.id}.jpg`}
+          width={400}
+          height={400}
+          objectFit="cover"
+        ></Image>
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>
@@ -28,11 +30,10 @@ export default function User({ user }) {
           a {
             padding: 0 14px;
           }
-          
         `}
       </style>
       <style jsx>
-          {`
+        {`
             .grid {
               display: flex;
               flex-wrap: wrap;
@@ -60,7 +61,6 @@ export default function User({ user }) {
             }
             
             `}
-
       </style>
       <style jsx global>
         {`
@@ -76,25 +76,23 @@ export default function User({ user }) {
   );
 }
 
-export async function getStaticPaths(){
-  const paths =  [
-    { params: { id: '1'} },
-    { params: { id: '2'} },
-  ];
+export async function getStaticPaths() {
+  const paths = [{ params: { id: "1" } }, { params: { id: "2" } }];
   return {
     paths,
-    fallback: true
-  }
-
+    fallback: true,
+  };
 }
 
-export async function getStaticProps({params}){
-      const res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
-      const user =  await res.json();
+export async function getStaticProps({ params }) {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${params.id}`
+  );
+  const user = await res.json();
 
-      return{
-        props:{
-          user
-        }
-      }
-}   
+  return {
+    props: {
+      user,
+    },
+  };
+}

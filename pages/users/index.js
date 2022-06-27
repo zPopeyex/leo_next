@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function users({ users }) {
   return (
     <Layout>
-     
       <Title>Users Page</Title>
       <div className="grid">
         {users.map((user) => {

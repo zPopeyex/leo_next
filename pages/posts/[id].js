@@ -9,13 +9,6 @@ export default function post_d() {
   return (
     <div>
       <Layout>
-      <Head>
-        <title>Post #{router.query.id}</title>
-        <meta
-          name="description"
-          content="Descripcón del post seleccionado"
-        />
-      </Head>
         <Title>Post Details</Title>
         <p>Post ID: {router.query.id}</p>
       </Layout>
