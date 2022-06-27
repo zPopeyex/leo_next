@@ -7,20 +7,12 @@ import Title from "../../components/title";
 export default function User({ user }) {
   const router = useRouter();
 
-  if (router.isFallback){
-    return <div> CARGANDO ...</div>
-  }
+ 
 
   return (
     <div>
       <Layout>
-      <Head>
-        <title>User #{user.id}</title>
-        <meta
-          name="description"
-          content="Descripcón del usuario seleccionado"
-        />
-      </Head>
+      
         <Title>User ID {user.id}</Title>
         <Image src={`/images/${user.id}.jpg`} width={400} height={400} objectFit="cover"></Image>
         <p>Name: {user.name}</p>
